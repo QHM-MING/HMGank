@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_80"
+        android:background="?attr/selectableItemBackground"
+        android:paddingBottom="@dimen/padding_10"
+        android:paddingLeft="@dimen/padding_15"
+        android:paddingRight="@dimen/padding_15"
+        android:paddingTop="@dimen/padding_10">
+
+        <ImageView
+            android:id="@+id/iv_thumbnail"
+            android:layout_width="@dimen/height_60"
+            android:layout_height="@dimen/height_60"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            tools:src="@drawable/image_default" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/margin_15"
+            android:layout_toLeftOf="@+id/iv_thumbnail"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                tools:text="Google Map 易用性封装，支持切换主题，ListView展示等小功能" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@drawable/ic_item_author"
+                    android:drawablePadding="@dimen/padding_2"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/text_12"
+                    tools:text="带马甲" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:drawableLeft="@drawable/ic_item_time"
+                    android:drawablePadding="@dimen/padding_2"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/text_12"
+                    tools:text="2017-2-11" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_0_5"
+        android:background="@color/grey_cccccc" />
+
+</LinearLayout>

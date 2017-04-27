@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 各种圆角大小 -->
+    <dimen name="corner_1">1dp</dimen>
+    <dimen name="corner_2">2dp</dimen>
+    <dimen name="corner_3">3dp</dimen>
+    <dimen name="corner_4">4dp</dimen>
+    <dimen name="corner_5">5dp</dimen>
+    <dimen name="corner_7">7dp</dimen>
+    <dimen name="corner_10">10dp</dimen>
+    <dimen name="corner_15">15dp</dimen>
+
+    <!-- 各种标题栏高度dimen -->
+
+    <dimen name="height_80">80dp</dimen>
+    <dimen name="height_60">60dp</dimen>
+    <dimen name="height_48">48dp</dimen>
+    <dimen name="height_42">42dp</dimen>
+    <dimen name="height_0_5">0.5dp</dimen>
+
+    <!-- 文字大小dimen -->
+    <dimen name="text_12">12sp</dimen>
+    <dimen name="text_13">13sp</dimen>
+    <dimen name="text_14">14sp</dimen>
+    <dimen name="text_15">15sp</dimen>
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_17">17sp</dimen>
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_19">19sp</dimen>
+    <dimen name="text_20">20sp</dimen>
+
+    <!-- 各种padding -->
+    <dimen name="padding_2">2dp</dimen>
+    <dimen name="padding_3">3dp</dimen>
+    <dimen name="padding_5">5dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_15">15dp</dimen>
+    <dimen name="padding_20">20dp</dimen>
+    <dimen name="padding_25">25dp</dimen>
+
+    <!-- 各种margin -->
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="margin_3">3dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_15">15dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_25">25dp</dimen>
+
+</resources>

@@ -3,4 +3,27 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- white -->
+    <color name="white_ffffff">#ffffff</color>
+
+    <!-- black -->
+    <color name="black_1f1a03">#1f1a03</color>
+
+    <!-- grey -->
+    <color name="grey_999999">#999999</color>
+    <color name="grey_cccccc">#cccccc</color>
+
+    <!-- blue -->
+    <color name="blue_23d0f2">#23D0F2</color>
+
+
+
+    <!-- SwipeRefreshColor -->
+    <color name="colorSwipeRefresh1">#212121</color>
+    <color name="colorSwipeRefresh2">#FEC006</color>
+    <color name="colorSwipeRefresh3">#3E50B4</color>
+    <color name="colorSwipeRefresh4">#FE5621</color>
+    <color name="colorSwipeRefresh5">#9B26AF</color>
+    <color name="colorSwipeRefresh6">#02A8F3</color>
 </resources>

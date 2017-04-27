@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tab_title">
+        <item>App</item>
+        <item>Android</item>
+        <!--<item>iOS</item>-->
+        <!--<item>前端</item>-->
+        <!--<item>瞎推荐</item>-->
+        <!--<item>扩展资源</item>-->
+        <!--<item>休息视频</item>-->
+    </string-array>
+
+</resources>

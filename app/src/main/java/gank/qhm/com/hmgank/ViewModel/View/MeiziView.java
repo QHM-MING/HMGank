@@ -17,4 +17,6 @@ public interface MeiziView extends BaseView {
     String getCategory();
 
     void showLoadFail(String s);
+
+    int randomColor(int position);
 }

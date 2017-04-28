@@ -1,63 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_margin="@dimen/margin_5"
+    app:cardCornerRadius="@dimen/corner_7">
 
-    <RelativeLayout
-        android:id="@+id/item_root"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_5"
-        android:layout_marginLeft="@dimen/margin_10"
-        android:layout_marginRight="@dimen/margin_10"
-        android:layout_marginTop="@dimen/margin_5"
-        android:background="@drawable/shape_white_corner_5">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:orientation="vertical">-->
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/iv_meizi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="vertical">
+            android:layout_height="300dp" />
 
-            <ImageView
-                android:id="@+id/iv_meizi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="@dimen/margin_5"-->
+            <!--android:layout_marginTop="@dimen/margin_5"-->
+            <!--android:orientation="vertical">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_5"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
+            <!--<TextView-->
+                <!--android:id="@+id/tv_name"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/margin_10"-->
+                <!--android:drawableLeft="@drawable/ic_item_author"-->
+                <!--android:drawablePadding="@dimen/padding_2"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:textSize="@dimen/text_12"-->
+                <!--tools:text="带马甲" />-->
 
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/ic_item_author"
-                    android:drawablePadding="@dimen/padding_2"
-                    android:gravity="center_vertical"
-                    android:textSize="@dimen/text_12"
-                    tools:text="带马甲" />
+            <!--<TextView-->
+                <!--android:id="@+id/tv_time"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/margin_5"-->
+                <!--android:layout_marginRight="@dimen/margin_10"-->
+                <!--android:layout_marginTop="@dimen/margin_2"-->
+                <!--android:drawablePadding="@dimen/padding_2"-->
+                <!--android:gravity="right"-->
+                <!--android:textSize="@dimen/text_12"-->
+                <!--tools:text="2017-2-11" />-->
 
-                <TextView
-                    android:id="@+id/tv_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/margin_5"
-                    android:drawableLeft="@drawable/ic_item_time"
-                    android:drawablePadding="@dimen/padding_2"
-                    android:gravity="center_vertical"
-                    android:textSize="@dimen/text_12"
-                    tools:text="2017-2-11" />
+        <!--</LinearLayout>-->
 
-            </LinearLayout>
-
-        </LinearLayout>
-    </RelativeLayout>
-
-
-</LinearLayout>
+    <!--</LinearLayout>-->
+</android.support.v7.widget.CardView>

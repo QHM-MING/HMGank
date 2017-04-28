@@ -84,7 +84,7 @@ public class CategoryFragment extends BaseFragment implements CategoryView,
         rv_content.setAdapter(mAdapter =
                 new CommonRecyclerAdapter<CategoryModel.ResultsBean>(R.layout.item_category, mContext, mData) {
                     @Override
-                    public void convert(CommonRecyclerHolder holder, CategoryModel.ResultsBean item) {
+                    public void convert(CommonRecyclerHolder holder, CategoryModel.ResultsBean item, int position) {
                         RelativeLayout rl_root = holder.getView(R.id.rl_root);
                         TextView tv_content = holder.getView(R.id.tv_content);
                         TextView tv_name = holder.getView(R.id.tv_name);

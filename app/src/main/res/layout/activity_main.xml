@@ -74,6 +74,7 @@
                         app:tabPaddingEnd="20dp"
                         app:tabPaddingStart="20dp"
                         app:tabSelectedTextColor="@color/white_ffffff"
+                        app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
                         app:tabTextColor="@color/grey_999999" />
 
                 </FrameLayout>

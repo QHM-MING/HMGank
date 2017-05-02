@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ import gank.qhm.com.hmgank.Config;
 import gank.qhm.com.hmgank.Controller.adapter.CategoryFragmentAdapter;
 import gank.qhm.com.hmgank.Navegation;
 import gank.qhm.com.hmgank.R;
+import gank.qhm.com.hmgank.Utils.DisplayUtils;
 import gank.qhm.com.hmgank.Utils.ImageLoader;
 import gank.qhm.com.hmgank.Utils.ToastUtils;
 import gank.qhm.com.hmgank.ViewModel.Presenter.MainPresenter;
@@ -71,9 +73,9 @@ public class MainActivity extends BaseActivity implements MainView {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { // 4.4 以上版本
             // 设置 Toolbar 高度为 80dp，适配状态栏
-//            ViewGroup.LayoutParams layoutParams = mToolbar.getLayoutParams();
-//            layoutParams.height = DisplayUtils.dp2px(80, this);
-//            mToolbar.setLayoutParams(layoutParams);
+            ViewGroup.LayoutParams layoutParams = mToolbar.getLayoutParams();
+            layoutParams.height = DisplayUtils.dp2px(80, this);
+            mToolbar.setLayoutParams(layoutParams);
         } else { // 4.4 一下版本
             // 设置 设置图标距离顶部（状态栏最底）为
 //            mIvSetting.setPadding(mIvSetting.getPaddingLeft(),

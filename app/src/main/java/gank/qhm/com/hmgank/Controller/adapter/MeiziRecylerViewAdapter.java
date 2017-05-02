@@ -72,17 +72,14 @@ public class MeiziRecylerViewAdapter extends RecyclerView.Adapter<MeiziRecylerVi
             ImageLoader.loadImg(mContext, resultsBean.url, resource -> {
                int width =  ((Activity)mContext).getWindow().getDecorView().getWidth() / 2;
                 int viewWidth = width - DisplayUtils.dp2px(5 + 5, mContext);
-//                int viewWidth = iv_meizi.getWidth();
                 int viewHeight = (int) (resource.getIntrinsicHeight() * (viewWidth * 1.0) / resource.getMinimumWidth());
-                Log.d("qhm", "vw == " + viewWidth);
-                Log.d("qhm", "vh == " + viewHeight);
                 setImageLayoutParams(viewWidth, viewHeight);
                 meiziSizeModel.setSize(viewWidth, viewHeight);
                 iv_meizi.setImageDrawable(resource);
             });
 
-//            tv_name.setText(resultsBean.who);
-//            tv_time.setText(TimeUtils.formatTo(resultsBean.publishedAt, "yyyy-MM-dd"));
+            tv_name.setText(resultsBean.who);
+            tv_time.setText(TimeUtils.formatTo(resultsBean.publishedAt, "yyyy-MM-dd"));
         }
 
         private void setImageLayoutParams(int width, int height) {

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -28,24 +27,35 @@
                 android:layout_gravity="center"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="全是妹子"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefreshLayout"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <gank.qhm.com.hmgank.Widget.recyclerviewwithfooter.RecyclerViewWithFooter
-            android:id="@+id/rv_content"
+        <WebView
+            android:id="@+id/web_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical"
-            tools:listitem="@layout/item_meizi" />
+            android:layout_height="match_parent" />
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_collection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="@dimen/margin_15"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_collect" />
+
+        <gank.qhm.com.hmgank.Widget.ProgressView
+            android:id="@+id/pv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_1_5"
+            android:background="@null" />
+
+    </FrameLayout>
 
 </LinearLayout>

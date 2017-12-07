@@ -6,6 +6,7 @@
 
     <!-- white -->
     <color name="white_ffffff">#ffffff</color>
+    <color name="white_80ffffff">#80ffffff</color>
 
     <!-- black -->
     <color name="black_1f1a03">#1f1a03</color>
@@ -16,8 +17,6 @@
 
     <!-- blue -->
     <color name="blue_23d0f2">#23D0F2</color>
-
-
 
     <!-- SwipeRefreshColor -->
     <color name="colorSwipeRefresh1">#212121</color>

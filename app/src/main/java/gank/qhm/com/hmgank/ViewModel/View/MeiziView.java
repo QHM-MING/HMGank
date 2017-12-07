@@ -4,6 +4,8 @@ import gank.qhm.com.hmgank.Model.CategoryModel;
 
 /**
  * Created by qhm on 2017/4/25
+ * <p>
+ * 妹子View
  */
 
 public interface MeiziView extends BaseView {

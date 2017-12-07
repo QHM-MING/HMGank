@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/blue_23d0f2</item>
     </style>
 
     <style name="HMToolBar" parent="Widget.AppCompat.Toolbar">
@@ -19,4 +19,24 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="LargePhotoTheme" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="HMProgressBar" parent="Base.Widget.AppCompat.ProgressBar">
+        
+        <item name="android:indeterminate">@color/blue_23d0f2</item>
+        <item name="android:indeterminateTintMode">src_atop</item>
+
+    </style>
+
+    <style name="MainStyle" parent="AppTheme">
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+    
 </resources>

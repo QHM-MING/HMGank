@@ -1,14 +1,17 @@
 package gank.qhm.com.hmgank.Controller;
 
-import android.os.Build;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,7 +22,7 @@ import java.util.List;
 
 import gank.qhm.com.hmgank.Config;
 import gank.qhm.com.hmgank.Controller.adapter.CategoryFragmentAdapter;
-import gank.qhm.com.hmgank.Navegation;
+import gank.qhm.com.hmgank.Navigation;
 import gank.qhm.com.hmgank.R;
 import gank.qhm.com.hmgank.Utils.DisplayUtils;
 import gank.qhm.com.hmgank.Utils.ImageLoader;
@@ -34,12 +37,15 @@ import gank.qhm.com.hmgank.ViewModel.View.MainView;
 
 public class MainActivity extends BaseActivity implements MainView {
 
+    private DrawerLayout dl_base;
     private ImageView iv;
     private TextView tv_search;
     private AppBarLayout mAppBarLayout;
     private TabLayout tl_tab;
     private Toolbar mToolbar;
     private ViewPager vp_category;
+    private AppCompatImageView iv_setting;
+    private FrameLayout fl_navigation;
 
     private CategoryFragmentAdapter adapter;
     private List<CategoryFragment> fragments;
@@ -61,29 +67,22 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     protected void initView() {
 
+        dl_base = fv(R.id.dl_base);
         iv = fv(R.id.iv);
         tv_search = fv(R.id.tv_search);
         mAppBarLayout = fv(R.id.mAppBarLayout);
         tl_tab = fv(R.id.tl_tab);
         vp_category = fv(R.id.vp_category);
         mToolbar = fv(R.id.mToolbar);
+        iv_setting = fv(R.id.iv_setting);
+        fl_navigation = fv(R.id.fl_navigation);
 
 
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { // 4.4 以上版本
-            // 设置 Toolbar 高度为 80dp，适配状态栏
-            ViewGroup.LayoutParams layoutParams = mToolbar.getLayoutParams();
-            layoutParams.height = DisplayUtils.dp2px(80, this);
-            mToolbar.setLayoutParams(layoutParams);
-        } else { // 4.4 一下版本
-            // 设置 设置图标距离顶部（状态栏最底）为
-//            mIvSetting.setPadding(mIvSetting.getPaddingLeft(),
-//                    DisplayUtils.dp2px(15, this),
-//                    mIvSetting.getPaddingRight(),
-//                    mIvSetting.getPaddingBottom());
-        }
-
+//        // 设置 Toolbar 高度为 80dp，适配状态栏
+        ViewGroup.LayoutParams layoutParams = mToolbar.getLayoutParams();
+        layoutParams.height = DisplayUtils.dp2px(80, this);
+        mToolbar.setLayoutParams(layoutParams);
+        DisplayUtils.setViewTransparentPadding(this, fl_navigation);
 
         initFragments();
         initViewPager();
@@ -91,6 +90,7 @@ public class MainActivity extends BaseActivity implements MainView {
         setFabDynamicState();
         initSearchClick();
         initMeiziClick();
+        initMenuClick();
     }
 
     @Override
@@ -185,7 +185,15 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     public void initMeiziClick() {
         iv.setOnClickListener(v -> {
-            Navegation.showMeizi(this);
+            Navigation.showMeizi(this);
+        });
+    }
+
+    @Override
+    public void initMenuClick() {
+        dl_base.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        iv_setting.setOnClickListener(v -> {
+            dl_base.openDrawer(GravityCompat.START);
         });
     }
 }

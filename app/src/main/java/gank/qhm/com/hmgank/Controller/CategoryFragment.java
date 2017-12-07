@@ -15,6 +15,7 @@ import gank.qhm.com.hmgank.Config;
 import gank.qhm.com.hmgank.Controller.adapter.CommonRecyclerAdapter;
 import gank.qhm.com.hmgank.Controller.adapter.CommonRecyclerHolder;
 import gank.qhm.com.hmgank.Model.CategoryModel;
+import gank.qhm.com.hmgank.Navigation;
 import gank.qhm.com.hmgank.R;
 import gank.qhm.com.hmgank.Utils.DisplayUtils;
 import gank.qhm.com.hmgank.Utils.ImageLoader;
@@ -101,11 +102,9 @@ public class CategoryFragment extends BaseFragment implements CategoryView,
                                     DisplayUtils.dp2px(THUMBNAIL_WIDTH, mContext),
                                     DisplayUtils.dp2px(THUMBNAIL_HEIGHT, mContext));
                         }
-                        rl_root.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                //跳转浏览
-                            }
+                        rl_root.setOnClickListener(v -> {
+                            //跳转浏览
+                            Navigation.showGankDetail(getActivity(), item);
                         });
 
                     }

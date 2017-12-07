@@ -10,6 +10,8 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 
+import java.util.concurrent.ExecutionException;
+
 import gank.qhm.com.hmgank.Utils.Ext.Act1;
 
 
@@ -77,5 +79,12 @@ public class ImageLoader {
         });
     }
 
+    public static Bitmap downloadImageReSize(Context context, String url, int width, int height) throws ExecutionException, InterruptedException {
+        return Glide.with(context)
+                .load(url)
+                .asBitmap() //必须
+                .into(width, height)
+                .get();
+    }
 
 }

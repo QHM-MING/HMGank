@@ -1,5 +1,6 @@
 package gank.qhm.com.hmgank.Model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ public class CategoryModel {
     public boolean error;
     public List<ResultsBean> results;
 
-    public static class ResultsBean {
+    public static class ResultsBean implements Serializable {
         public String _id;              //Id
         public String createdAt;        //创建时间
         public String desc;             //描述

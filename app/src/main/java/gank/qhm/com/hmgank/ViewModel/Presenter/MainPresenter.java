@@ -1,6 +1,5 @@
 package gank.qhm.com.hmgank.ViewModel.Presenter;
 
-import gank.qhm.com.hmgank.Config;
 import gank.qhm.com.hmgank.Dao.HMGankServer;
 import gank.qhm.com.hmgank.Model.CategoryModel;
 import gank.qhm.com.hmgank.Utils.Ext.Act1;

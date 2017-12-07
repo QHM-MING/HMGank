@@ -6,7 +6,9 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 /**
- * Created by liuyang on 16/5/27.
+ * Created by qhm on 16/5/27.
+ * <p>
+ * 正方形ImageView
  */
 public class SquareImageView extends AppCompatImageView {
 
@@ -22,9 +24,9 @@ public class SquareImageView extends AppCompatImageView {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         if (getMeasuredWidth() <= getMeasuredHeight()) {
-            setMeasuredDimension(getMeasuredWidth(),getMeasuredWidth());
+            setMeasuredDimension(getMeasuredWidth(), getMeasuredWidth());
         } else {
-            setMeasuredDimension(getMeasuredHeight(),getMeasuredHeight());
+            setMeasuredDimension(getMeasuredHeight(), getMeasuredHeight());
         }
     }
 }

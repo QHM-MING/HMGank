@@ -5,6 +5,8 @@ import android.os.Build;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +40,7 @@ public class MeiziActivity extends BaseActivity implements SwipeRefreshLayout.On
     };
 
     private AppBarLayout mAppbar;
+    private Toolbar toolbar;
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerViewWithFooter rv_content;
 
@@ -64,8 +67,10 @@ public class MeiziActivity extends BaseActivity implements SwipeRefreshLayout.On
     @Override
     protected void initView() {
         mAppbar = fv(R.id.mAppbar);
+        toolbar = fv(R.id.toolbar);
         rv_content = fv(R.id.rv_content);
         swipeRefreshLayout = fv(R.id.swipeRefreshLayout);
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             mAppbar.setPadding(
@@ -74,6 +79,10 @@ public class MeiziActivity extends BaseActivity implements SwipeRefreshLayout.On
                     mAppbar.getPaddingRight(),
                     mAppbar.getPaddingBottom());
         }
+
+        toolbar.setNavigationOnClickListener(v -> {
+            onBackPressed();
+        });
 
         swipeRefreshLayout.setColorSchemeResources(
                 R.color.colorSwipeRefresh1,

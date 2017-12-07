@@ -1,7 +1,13 @@
 package gank.qhm.com.hmgank.Utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.os.Build;
+import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
 /**
@@ -9,6 +15,11 @@ import android.view.WindowManager;
  * Created by bakumon on 2016/12/14.
  */
 public class DisplayUtils {
+    public static final String KEY_LEFT = "left";
+    public static final String KEY_TOP = "top";
+    public static final String KEY_WIDTH = "width";
+    public static final String KEY_HEIGHT = "height";
+
     private static DisplayMetrics getMetrics(Context context) {
         DisplayMetrics metrics = new DisplayMetrics();
 
@@ -36,8 +47,7 @@ public class DisplayUtils {
     /**
      * 将px值转换为sp值，保证文字大小不变
      *
-     * @param pxValue
-     *            （DisplayMetrics类中属性scaledDensity）
+     * @param pxValue （DisplayMetrics类中属性scaledDensity）
      * @return
      */
     public static int px2sp(Context context, float pxValue) {
@@ -48,8 +58,7 @@ public class DisplayUtils {
     /**
      * 将sp值转换为px值，保证文字大小不变
      *
-     * @param spValue
-     *            （DisplayMetrics类中属性scaledDensity）
+     * @param spValue （DisplayMetrics类中属性scaledDensity）
      * @return
      */
     public static int sp2px(Context context, float spValue) {
@@ -83,5 +92,55 @@ public class DisplayUtils {
             result = context.getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    }
+
+
+    /**
+     * 获取view 在屏幕中的位置 保存在Bundle中 并返回
+     *
+     * @param view
+     * @return
+     */
+    public static Bundle captureValues(View view) {
+        Bundle b = new Bundle();
+        int[] screenLocation = new int[2];
+        view.getLocationOnScreen(screenLocation);
+        b.putInt(KEY_LEFT, screenLocation[0]);
+        b.putInt(KEY_TOP, screenLocation[1]);
+        b.putInt(KEY_WIDTH, view.getWidth());
+        b.putInt(KEY_HEIGHT, view.getHeight());
+        return b;
+    }
+
+
+
+    /**
+     * 设置透明的状态栏  及全屏
+     *
+     * @param context
+     */
+
+    public static void setTransparentStatusBar(Context context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = ((Activity) context).getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+        }
+    }
+
+    /**
+     * 设置适配全屏的控件
+     *
+     * @param context
+     */
+    public static void setViewTransparentPadding(Context context, View view) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            view.setPadding(view.getPaddingLeft(),
+                    view.getPaddingTop() + getStatusBarHeight(context),
+                    view.getPaddingRight(), view.getPaddingBottom());
+        }
     }
 }

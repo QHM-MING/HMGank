@@ -4,6 +4,9 @@
 
     <!-- recycleviewwithfooter -->
     <string name="rv_with_footer_loading">加载中…</string>
-    <string name="rv_with_footer_empty">没有数据啦</string>w
+    <string name="rv_with_footer_empty">没有数据啦</string>
+
+    <string name="navigation_drawer_open">没有数据啦</string>
+    <string name="navigation_drawer_close">没有数据啦</string>
 
 </resources>
